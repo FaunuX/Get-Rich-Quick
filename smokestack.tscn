@@ -1,24 +1,24 @@
 [gd_scene load_steps=6 format=3 uid="uid://cxicovmg6xp6f"]
 
-[ext_resource type="Texture2D" uid="uid://ckwno33lc3y4c" path="res://Smokestack-1.png.png" id="1_l1sxr"]
+[ext_resource type="Texture2D" uid="uid://bqvar5knrps5v" path="res://Smokestack.png" id="1_5gisk"]
 [ext_resource type="Script" path="res://smokestack.gd" id="2_xhd1u"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rvfga"]
-atlas = ExtResource("1_l1sxr")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7su4i"]
-atlas = ExtResource("1_l1sxr")
+[sub_resource type="AtlasTexture" id="AtlasTexture_enjns"]
+atlas = ExtResource("1_5gisk")
 region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkdap"]
+atlas = ExtResource("1_5gisk")
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hdenl"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rvfga")
+"texture": SubResource("AtlasTexture_enjns")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7su4i")
+"texture": SubResource("AtlasTexture_xkdap")
 }],
 "loop": true,
 "name": &"default",
@@ -28,5 +28,5 @@ animations = [{
 [node name="Smokestack" type="AnimatedSprite2D"]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_hdenl")
-frame_progress = 0.998897
+frame_progress = 0.926406
 script = ExtResource("2_xhd1u")

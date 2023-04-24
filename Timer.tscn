@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://rvyon7pls41w"]
+
+[ext_resource type="Script" path="res://Timer.gd" id="1_5tw4f"]
+
+[node name="Stopwatch" type="Timer"]
+script = ExtResource("1_5tw4f")
+
+[connection signal="timeout" from="." to="." method="_on_timeout"]

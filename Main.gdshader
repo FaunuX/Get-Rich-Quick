@@ -1,7 +1,7 @@
 shader_type canvas_item;
 const float UPDATE_INTERVAL = .163;
-const float STATIC_GRANULARITY = .005;
-const float EDGE_BLUR = .5;
+const float STATIC_GRANULARITY = .001;
+const float EDGE_BLUR = .75;
 const float BORDER_SIZE = .3;
 
 float generate_random_static (in float size, in float interval, in vec2 uv){
