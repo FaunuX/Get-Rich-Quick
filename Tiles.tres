@@ -1,10 +1,9 @@
-[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://d0a2ugybdfuyo"]
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://d0a2ugybdfuyo"]
 
 [ext_resource type="Texture2D" uid="uid://bf4ceftli03f6" path="res://Tiles.png" id="1_0mo7i"]
 [ext_resource type="PackedScene" uid="uid://ddkx0v5dpnxc0" path="res://coin.tscn" id="2_alhfc"]
 [ext_resource type="Texture2D" uid="uid://dkdsfaovsgkbk" path="res://Warnings.png" id="3_m6qow"]
 [ext_resource type="PackedScene" uid="uid://cxicovmg6xp6f" path="res://smokestack.tscn" id="4_wvplw"]
-[ext_resource type="Texture2D" uid="uid://bri14amuvfq0c" path="res://Pipes.png" id="5_6w7pg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j57p6"]
 texture = ExtResource("1_0mo7i")
@@ -63,37 +62,9 @@ texture = ExtResource("3_m6qow")
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_uogwl"]
 scenes/1/scene = ExtResource("4_wvplw")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lf7ta"]
-texture = ExtResource("5_6w7pg")
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-1:0/0 = 0
-1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:0/0/physics_layer_0/angular_velocity = 0.0
-2:0/0 = 0
-2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:0/0/physics_layer_0/angular_velocity = 0.0
-0:1/0 = 0
-0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:1/0/physics_layer_0/angular_velocity = 0.0
-2:1/0 = 0
-2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:1/0/physics_layer_0/angular_velocity = 0.0
-0:2/0 = 0
-0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:2/0/physics_layer_0/angular_velocity = 0.0
-1:2/0 = 0
-1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:2/0/physics_layer_0/angular_velocity = 0.0
-2:2/0 = 0
-2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:2/0/physics_layer_0/angular_velocity = 0.0
-
 [resource]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_j57p6")
 sources/1 = SubResource("TileSetScenesCollectionSource_4tryp")
 sources/3 = SubResource("TileSetAtlasSource_rsvwy")
 sources/5 = SubResource("TileSetScenesCollectionSource_uogwl")
-sources/7 = SubResource("TileSetAtlasSource_lf7ta")
