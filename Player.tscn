@@ -1,30 +1,49 @@
-[gd_scene load_steps=5 format=3 uid="uid://crg3q6ycx62qw"]
+[gd_scene load_steps=7 format=3 uid="uid://3uwxnprpbtlb"]
 
 [ext_resource type="Script" path="res://Player.gd" id="2"]
-[ext_resource type="Texture2D" uid="uid://yu6tpqjeha66" path="res://Player.png" id="2_2lg8x"]
+[ext_resource type="Texture2D" uid="uid://yu6tpqjeha66" path="res://Player_1.png" id="2_gkuf1"]
+[ext_resource type="Texture2D" uid="uid://cx5v100fwfh40" path="res://Player_2.png" id="4_clj6e"]
 
 [sub_resource type="RectangleShape2D" id="2"]
 size = Vector2(12, 32)
+
+[sub_resource type="Curve" id="Curve_5dr66"]
+_data = [Vector2(0.0756366, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3haxn"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_2lg8x")
+"texture": ExtResource("2_gkuf1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_clj6e")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 6.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 0)
+position = Vector2(0, -16)
 shape = SubResource("2")
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+lifetime = 0.2
+one_shot = true
+explosiveness = 0.8
+scale_amount_min = 0.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_5dr66")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -16)
 sprite_frames = SubResource("SpriteFrames_3haxn")
+frame_progress = 0.0714087

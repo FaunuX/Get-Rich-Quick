@@ -16,6 +16,12 @@ var coyote_timer = 0
 var jump_buffer_timer = 0
 var increased_gravity = false
 
+func flip_animated_sprite(dir):
+	if dir == 1:
+		$AnimatedSprite2D.flip_h = false
+	else:
+		$AnimatedSprite2D.flip_h = true
+
 func get_horizontal_movement():
 	var dir = 0
 	if Input.is_action_pressed("move_right"):
@@ -23,8 +29,14 @@ func get_horizontal_movement():
 	if Input.is_action_pressed("move_left"):
 		dir -= 1
 	if dir != 0:
+		flip_animated_sprite(dir)
+		if can_jump():
+			$AnimatedSprite2D.play()
+		else:
+			$AnimatedSprite2D.stop()
 		velocity.x = lerpf(velocity.x, dir * move_speed * move_speed_modifier, acceleration)
 	else:
+		$AnimatedSprite2D.stop()
 		velocity.x = lerpf(velocity.x, 0, friction)
 
 func can_jump():
@@ -38,6 +50,7 @@ func wants_to_jump():
 	return false
 
 func jump():
+	$CPUParticles2D.emitting = true
 	velocity.y -= jump_height * jump_height_modifier
 
 func apply_gravity(delta):
