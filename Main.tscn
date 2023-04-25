@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwq13yg300t1c"]
+[gd_scene load_steps=11 format=3 uid="uid://cwq13yg300t1c"]
 
 [ext_resource type="PackedScene" uid="uid://3uwxnprpbtlb" path="res://Player.tscn" id="1"]
 [ext_resource type="Script" path="res://Main.gd" id="1_62w1g"]
 [ext_resource type="TileSet" uid="uid://d0a2ugybdfuyo" path="res://Tiles.tres" id="2_6pg8h"]
+[ext_resource type="PackedScene" uid="uid://dhhke7oivw1ep" path="res://music_player_2.tscn" id="2_ogx4n"]
 [ext_resource type="Texture2D" uid="uid://cwqmpjcsuv4wm" path="res://Bg.jpeg" id="2_xe18d"]
 [ext_resource type="Texture2D" uid="uid://dg6l7vnbshu2i" path="res://Bg-1.png" id="3_raie6"]
 [ext_resource type="Shader" path="res://Main.gdshader" id="5_gsbcy"]
@@ -12,8 +13,10 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_syrd3"]
 shader = ExtResource("5_gsbcy")
 
-[node name="Main" type="Node"]
+[node name="Game" type="Node"]
 script = ExtResource("1_62w1g")
+
+[node name="MusicPlayer2" parent="." instance=ExtResource("2_ogx4n")]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -26,7 +29,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("2_xe18d")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.5, 0.5)
+motion_scale = Vector2(0.3, 0.3)
 motion_mirroring = Vector2(1280, 1024)
 
 [node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]

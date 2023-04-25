@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhhke7oivw1ep"]
+
+[ext_resource type="AudioStream" uid="uid://bkktqlblcms7r" path="res://1085168_FaunuX---Figure-it-Out.mp3" id="1_8ljeq"]
+[ext_resource type="Script" path="res://music_player_2.gd" id="2_d5da3"]
+
+[node name="MusicPlayer2" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_8ljeq")
+autoplay = true
+script = ExtResource("2_d5da3")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

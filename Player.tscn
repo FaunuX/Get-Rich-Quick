@@ -1,8 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://3uwxnprpbtlb"]
+[gd_scene load_steps=9 format=3 uid="uid://3uwxnprpbtlb"]
 
+[ext_resource type="Shader" path="res://Player.gdshader" id="1_1qso6"]
 [ext_resource type="Script" path="res://Player.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://yu6tpqjeha66" path="res://Player_1.png" id="2_gkuf1"]
 [ext_resource type="Texture2D" uid="uid://cx5v100fwfh40" path="res://Player_2.png" id="4_clj6e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_olucj"]
+shader = ExtResource("1_1qso6")
+shader_parameter/intensity = 1000
+shader_parameter/precision = null
+shader_parameter/flipColors = false
+shader_parameter/outline_color = Color(1, 0, 0, 1)
+shader_parameter/outline_color_2 = Color(0, 1, 0, 1)
+shader_parameter/use_outline_uv = false
+shader_parameter/useTexture = false
 
 [sub_resource type="RectangleShape2D" id="2"]
 size = Vector2(12, 32)
@@ -26,6 +37,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+material = SubResource("ShaderMaterial_olucj")
 script = ExtResource("2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -46,4 +58,4 @@ scale_amount_curve = SubResource("Curve_5dr66")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -16)
 sprite_frames = SubResource("SpriteFrames_3haxn")
-frame_progress = 0.0714087
+frame_progress = 0.573727

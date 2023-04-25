@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddkx0v5dpnxc0"]
+[gd_scene load_steps=9 format=3 uid="uid://ddkx0v5dpnxc0"]
 
 [ext_resource type="Script" path="res://coin.gd" id="1_g6hyv"]
+[ext_resource type="Shader" path="res://Shine.gdshader" id="1_mnp64"]
 [ext_resource type="Texture2D" uid="uid://gv1otivboh6p" path="res://Coin.png" id="2_sc3xx"]
 
 [sub_resource type="Animation" id="Animation_ke45r"]
@@ -26,6 +27,12 @@ _data = {
 "Coin_bob": SubResource("Animation_ke45r")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7d44s"]
+shader = ExtResource("1_mnp64")
+shader_parameter/speed = 1.0
+shader_parameter/tint = Color(1, 1, 0, 1)
+shader_parameter/span = 0.3
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_6yfuf"]
 animations = [{
 "frames": [{
@@ -50,6 +57,7 @@ libraries = {
 }
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_7d44s")
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_6yfuf")
 

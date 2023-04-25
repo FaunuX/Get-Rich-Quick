@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Get Rich Quick"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://Menu.tscn"
 config/features=PackedStringArray("4.0")
 config/icon="res://icon.png"
 
