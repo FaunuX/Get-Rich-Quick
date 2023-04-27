@@ -1,12 +1,61 @@
-[gd_scene load_steps=2 format=3 uid="uid://5xgsr1qofdb7"]
+[gd_scene load_steps=3 format=3 uid="uid://5xgsr1qofdb7"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_im0je"]
-font_size = 36
+[ext_resource type="Theme" uid="uid://bgg05dy4vf64q" path="res://menu.tres" id="1_y6yq0"]
+[ext_resource type="Script" path="res://gui.gd" id="2_ua8d5"]
 
-[node name="GUI" type="MarginContainer"]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Gui" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_y6yq0")
+script = ExtResource("2_ua8d5")
 
-[node name="Label" type="Label" parent="."]
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 210.0
+offset_bottom = 105.0
+columns = 2
+
+[node name="TimerLabel" type="Label" parent="GridContainer"]
 layout_mode = 2
-label_settings = SubResource("LabelSettings_im0je")
+text = "Time:"
+
+[node name="Time" type="RichTextLabel" parent="GridContainer"]
+layout_mode = 2
+fit_content = true
+autowrap_mode = 0
+
+[node name="ScoreLabel" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Score:"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer"]
+layout_mode = 2
+fit_content = true
+autowrap_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 40.0
+offset_right = 620.0
+offset_bottom = 440.0
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+fit_content = true
+autowrap_mode = 0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "You Win!"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Again?"
+
+[connection signal="button_down" from="VBoxContainer/Button" to="." method="_on_button_button_down"]

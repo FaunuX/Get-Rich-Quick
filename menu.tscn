@@ -1,47 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://d0o0g75rvbqc6"]
+[gd_scene load_steps=5 format=3 uid="uid://d0o0g75rvbqc6"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_0pvfb"]
-[ext_resource type="FontFile" uid="uid://b4a4cwwv3qjc1" path="res://Kwajong.otf" id="1_nd440"]
+[ext_resource type="Theme" uid="uid://bgg05dy4vf64q" path="res://menu.tres" id="1_qltjm"]
 [ext_resource type="PackedScene" uid="uid://bmgprncm0m6q8" path="res://music_player.tscn" id="2_4jwhl"]
-[ext_resource type="Texture2D" uid="uid://cwqmpjcsuv4wm" path="res://Bg.jpeg" id="3_d8ysb"]
-[ext_resource type="Texture2D" uid="uid://dg6l7vnbshu2i" path="res://Bg-1.png" id="4_2ywvr"]
-[ext_resource type="Shader" path="res://Main.gdshader" id="6_uc0tu"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xv50e"]
-bg_color = Color(0, 0.25098, 0.345098, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 1)
-shadow_size = 1
-shadow_offset = Vector2(8, 8)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f0x6f"]
-bg_color = Color(0, 0.533333, 0.533333, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 1)
-shadow_size = 1
-shadow_offset = Vector2(8, 8)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7mmyj"]
-
-[sub_resource type="Theme" id="Theme_qn88a"]
-default_font = ExtResource("1_nd440")
-default_font_size = 56
-Button/colors/font_color = Color(0, 0, 0, 1)
-Button/colors/font_hover_color = Color(0.988235, 0.988235, 0.988235, 1)
-Button/styles/hover = SubResource("StyleBoxFlat_xv50e")
-Button/styles/normal = SubResource("StyleBoxFlat_f0x6f")
-RichTextLabel/colors/default_color = Color(0.972549, 0.721569, 0, 1)
-RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
-RichTextLabel/styles/normal = SubResource("StyleBoxEmpty_7mmyj")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_yykww"]
-shader = ExtResource("6_uc0tu")
+[ext_resource type="PackedScene" uid="uid://du4n4lcoywl21" path="res://frontmatter.tscn" id="4_c7qli"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -50,36 +12,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_qn88a")
+theme = ExtResource("1_qltjm")
 script = ExtResource("1_0pvfb")
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.1, 0.1)
-motion_mirroring = Vector2(1280, 1024)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-scale = Vector2(2, 2)
-texture = ExtResource("3_d8ysb")
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.3, 0.3)
-motion_mirroring = Vector2(1280, 1024)
-
-[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-scale = Vector2(2, 2)
-texture = ExtResource("4_2ywvr")
 
 [node name="MusicPlayer" parent="." instance=ExtResource("2_4jwhl")]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_yykww")
-layout_mode = 2
-offset_right = 640.0
-offset_bottom = 480.0
+[node name="Frontmatter" parent="." instance=ExtResource("4_c7qli")]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 20.0
 offset_top = 40.0
 offset_right = 620.0
