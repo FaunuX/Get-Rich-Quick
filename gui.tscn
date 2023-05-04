@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://5xgsr1qofdb7"]
 
-[ext_resource type="Theme" uid="uid://bgg05dy4vf64q" path="res://menu.tres" id="1_y6yq0"]
+[ext_resource type="Theme" uid="uid://bgg05dy4vf64q" path="res://Menu.tres" id="1_y6yq0"]
 [ext_resource type="Script" path="res://gui.gd" id="2_ua8d5"]
 
 [node name="Gui" type="Control"]

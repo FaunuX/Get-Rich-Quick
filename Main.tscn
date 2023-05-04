@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwq13yg300t1c"]
+[gd_scene load_steps=9 format=3 uid="uid://cwq13yg300t1c"]
 
 [ext_resource type="PackedScene" uid="uid://3uwxnprpbtlb" path="res://Player.tscn" id="1"]
 [ext_resource type="Script" path="res://Main.gd" id="1_62w1g"]
@@ -8,12 +8,34 @@
 [ext_resource type="PackedScene" uid="uid://5xgsr1qofdb7" path="res://gui.tscn" id="5_vl2ej"]
 [ext_resource type="PackedScene" path="res://Stopwatch.tscn" id="7_tbpvp"]
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a1rxr"]
+emission_shape = 3
+emission_box_extents = Vector3(200, 150, 10)
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = 27.65
+linear_accel_max = 27.65
+radial_accel_min = 19.94
+radial_accel_max = 19.94
+tangential_accel_min = 16.72
+tangential_accel_max = 16.72
+scale_max = 5.0
+color = Color(0.988235, 0.627451, 0.266667, 0.501961)
+hue_variation_max = 0.1
+collision_mode = 2
+
 [node name="Game" type="Node"]
 script = ExtResource("1_62w1g")
 
 [node name="MusicPlayer2" parent="." instance=ExtResource("2_ogx4n")]
 
 [node name="Frontmatter" parent="." instance=ExtResource("3_7plxy")]
+position = Vector2(89, 416)
 shader_in_canvas_layer = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -44,6 +66,8 @@ layer_2/tile_data = PackedInt32Array()
 
 [node name="Player" parent="." instance=ExtResource("1")]
 position = Vector2(25, 150)
+move_speed_modifier = 0.85
+coyote_time = 15
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-577, -159)
@@ -54,6 +78,13 @@ drag_left_margin = 0.25
 drag_top_margin = 0.25
 drag_right_margin = 0.25
 drag_bottom_margin = 0.25
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(207, 1101)
+scale = Vector2(10, 10)
+amount = 256
+process_material = SubResource("ParticleProcessMaterial_a1rxr")
+lifetime = 15.0
 
 [connection signal="restart" from="CanvasLayer/GUI" to="." method="_on_gui_restart"]
 [connection signal="child_entered_tree" from="Level" to="." method="_on_level_child_entered_tree"]
