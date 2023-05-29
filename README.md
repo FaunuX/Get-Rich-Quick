@@ -11,7 +11,7 @@ Instructions:
 
 3. Click Play
 
-4. Collect All 21 Coins in the Level
+4. Collect All 55 Coins in the Level
 
 5. Write Down Your Time
 

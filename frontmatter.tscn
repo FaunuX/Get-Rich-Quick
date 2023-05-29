@@ -11,20 +11,28 @@ script = ExtResource("1_w5ebt")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.1, 0.1)
-motion_mirroring = Vector2(1280, 1024)
+motion_scale = Vector2(0.25, 0.25)
+motion_mirroring = Vector2(1280, 960)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 scale = Vector2(2, 2)
 texture = ExtResource("1_j1tx6")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.3, 0.3)
+motion_scale = Vector2(0.5, 0.5)
 motion_mirroring = Vector2(1280, 1024)
 
 [node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 scale = Vector2(2, 2)
 texture = ExtResource("2_pf21f")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(640, 480)
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer4"]
+offset_right = 640.0
+offset_bottom = 480.0
+color = Color(0, 0, 0, 0.25098)
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(1.5, 1.5)
